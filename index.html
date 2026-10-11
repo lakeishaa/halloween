@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>You're Invited!</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">YOU'RE INVITED ✳</p>
+    <section id="invite" class="step active">
+      <h1>A Little Party!</h1>
+      <p>Good music, good friends, good times.</p>
+      <p class="details">Saturday · 8 PM · Your place here</p>
+      <button id="start">RSVP →</button>
+      <button class="secondary" id="view-early">See guest list</button>
+    </section>
+    <form id="rsvp-form" class="step">
+      <div id="name-step">
+        <h2>What's your name?</h2>
+        <label for="guest-name">Your name</label>
+        <input id="guest-name" name="name" maxlength="60" autocomplete="name" required placeholder="Your name" />
+        <button type="button" id="to-status">Continue →</button>
+      </div>
+      <div id="status-step" hidden>
+        <h2>Can you make it?</h2>
+        <div class="choices" id="status-choices">
+          <button type="button" data-status="yes">Yes 🎉</button>
+          <button type="button" data-status="maybe">Maybe 🤔</button>
+          <button type="button" data-status="no">No 😢</button>
+        </div>
+        <button type="button" class="secondary" id="back-name">← Back</button>
+      </div>
+      <div id="plus-step" hidden>
+        <h2>Bringing anyone?</h2>
+        <div class="choices" id="plus-choices">
+          <button type="button" data-plus="0">Just me</button>
+          <button type="button" data-plus="1">+1</button>
+          <button type="button" data-plus="2">+2</button>
+        </div>
+        <button type="button" class="secondary" id="back-status">← Back</button>
+      </div>
+      <p id="form-error" class="error" role="alert"></p>
+    </form>
+    <section id="confirmation" class="step">
+      <h1 id="confirmation-title">See you there! ♡</h1>
+      <p>Your RSVP is saved.</p>
+      <button id="to-list">See who's coming →</button>
+    </section>
+    <section id="guest-list" class="step">
+      <h1>The Guest List</h1>
+      <p id="summary" aria-live="polite">Loading guests…</p>
+      <div id="guests" aria-live="polite"></div>
+      <p id="list-error" class="error" role="alert"></p>
+      <button id="new-rsvp">Add another RSVP</button>
+    </section>
+  </main>
+  <footer>Made with ♡</footer>
+</body>
+</html>
