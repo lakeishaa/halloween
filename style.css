@@ -12,6 +12,12 @@ body {
   place-content: center;
   margin: 0;
   padding: 24px;
+
+  background: #323641;
+  background-image: url("https://i.pinimg.com/736x/74/63/81/746381bb130990371d2d6a1a73d0d0b0.jpg");
+  background-repeat: repeat;
+  background-size: 400px auto; /* width height of each tile */
+  /* font-family: "Homemade Apple", cursive; */
 }
 .card {
   background: #fffaf0;

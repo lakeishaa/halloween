@@ -1,16 +1,10 @@
-# Party RSVP website
+# Halloween RSVP — Firebase + GitHub Pages
 
-## Setup
-1. Create a free Supabase project.
-2. Open **SQL Editor**, paste `schema.sql`, and run it. If the last publication command says the table is already a member, that's fine; don't rerun it.
-3. In Supabase **Project Settings → API**, copy the **Project URL** and **publishable key** (or legacy `anon` key) into `config.js`. Never use a secret or service_role key.
-4. Create a **public** GitHub repository named `party-invite` and upload `index.html`, `style.css`, `script.js`, and `config.js`. (You can also upload this README and schema.sql.)
-5. In GitHub repository **Settings → Pages**, choose **Deploy from a branch**, `main`, `/ (root)`, and Save.
-6. Visit `https://YOUR_USERNAME.github.io/party-invite/` once GitHub finishes deploying.
+1. Open `firebase.js`. Replace all `XXXX` placeholder values with your real Firebase **web app** configuration from Firebase Console > Project settings > General > Your apps > Config. Do not use service account credentials.
+2. In Firestore, use the `(default)` database and `rsvps` collection. Each document has `name` (string), `status` (string: `yes`, `no`, `maybe`), `plusOnes` (integer). Your existing Dorothy test record should appear.
+3. In Firestore > Rules, publish the validated rules from your conversation. Public creation is still vulnerable to spam; use App Check and additional abuse protection for wider sharing.
+4. For local testing, use a local HTTP server rather than opening `index.html` with `file://`. For example in the project folder run `python3 -m http.server 8000`, then open `http://localhost:8000`.
+5. Upload `index.html`, `style.css`, `script.js`, and `firebase.js` to a public GitHub repository. Go to Settings > Pages > Deploy from a branch > main > /(root). Wait for the Pages URL.
+6. If using Firebase Authentication or App Check, configure your deployed GitHub Pages domain as required by those products. Firestore access is controlled by Firestore Rules, not by the web config API key.
 
-## Important limitations
-- This is a simple **public** RSVP board: names, status, and plus-one counts are visible to anyone who visits the link. Only request data guests agree to make public.
-- Anyone can submit a name, including duplicate or fake names. There is no identity verification, editing, or anti-spam protection. For a larger/public event, add authentication, CAPTCHA, rate limiting, and an admin moderation workflow.
-- GitHub Pages is static hosting; Supabase provides the shared database and realtime updates. The public publishable key is safe to expose *only with appropriate Row Level Security policies*.
-- The guest list is capped at the first 1000 records in this starter. For a larger party, add pagination.
-- If Realtime publication is unavailable, the guest list still refreshes every 15 seconds.
+Note: The current guest list is public and guests cannot edit or delete their RSVPs. Names are not verified and duplicate submissions are possible.
