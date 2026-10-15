@@ -28,7 +28,7 @@ body {
   background: #fffaf0;
   width: min(100%, 480px);
   min-width: min(360px, calc(100vw - 48px));
-  padding: 42px 32px;
+  padding: 30px;
   border-radius: 22px;
   box-shadow: 0 12px 40px #5d3c2114;
   text-align: center;
@@ -157,7 +157,7 @@ footer {
   }
 
   .card {
-    padding: 32px 20px;
+    padding: 18px;
     border-radius: 18px;
   }
 
@@ -184,5 +184,57 @@ footer {
 
   .invite-image {
     max-width: 220px;
+  }
+}
+
+/* Card spacing */
+.card {
+  padding: 28px 32px;
+}
+
+/* Heading spacing */
+h1 {
+  margin: 10px 0;
+  line-height: 1;
+}
+
+h2 {
+  margin: 10px 0 16px;
+}
+
+/* Paragraph spacing */
+p {
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+/* Eyebrow spacing */
+.eyebrow {
+  margin: 0 0 8px;
+}
+
+/* Image spacing */
+.invite-image {
+  margin: 12px auto;
+}
+
+/* Event details spacing */
+.details {
+  margin: 14px 0;
+}
+
+/* Button spacing */
+button {
+  margin: 6px 4px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .card {
+    padding: 24px 20px;
+  }
+
+  .invite-image {
+    margin: 10px auto;
   }
 }
