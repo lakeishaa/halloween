@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>You're Invited!</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <main class="card">
+      <p class="eyebrow">KAY & DOT'S</p>
+      <section id="invite" class="step active">
+        <h1>HALLOWEEN SOIREE</h1>
+        <img
+          src="image.jpeg"
+          alt="Halloween party illustration"
+          class="invite-image"
+        />
+        <!-- <p>fdc? | byob | bring frens n fam</p> -->
+        <p class="details">Sat, Oct 31st · 8 PM · Meja Rias</p>
+        <button id="start">RSVP →</button>
+        <button class="secondary" id="view-early">See guest list</button>
+      </section>
+      <form id="rsvp-form" class="step">
+        <div id="name-step">
+          <h2>What's your name?</h2>
+          <label for="guest-name">Your name</label>
+          <input
+            id="guest-name"
+            name="name"
+            maxlength="60"
+            autocomplete="name"
+            required
+            placeholder="Your name"
+          />
+          <button type="button" id="to-status">Continue →</button>
+        </div>
+        <div id="status-step" hidden>
+          <h2>Can you make it?</h2>
+          <div class="choices" id="status-choices">
+            <button type="button" data-status="yes">Yes 🎉</button>
+            <button type="button" data-status="maybe">Maybe 🤔</button>
+            <button type="button" data-status="no">No 😢</button>
+          </div>
+          <button type="button" class="secondary" id="back-name">← Back</button>
+        </div>
+        <div id="plus-step" hidden>
+          <h2>Bringing anyone?</h2>
+          <div class="choices" id="plus-choices">
+            <button type="button" data-plus="0">Just me</button>
+            <button type="button" data-plus="1">+1</button>
+            <button type="button" data-plus="2">+2</button>
+          </div>
+          <button type="button" class="secondary" id="back-status">
+            ← Back
+          </button>
+        </div>
+        <p id="form-error" class="error" role="alert"></p>
+      </form>
+      <section id="confirmation" class="step">
+        <h1 id="confirmation-title">See you there! ♡</h1>
+        <p>Your RSVP is saved.</p>
+        <button id="to-list">See who's coming →</button>
+      </section>
+      <section id="guest-list" class="step">
+        <h1>Guest List</h1>
+        <p id="summary" aria-live="polite">Loading guests…</p>
+        <div id="guests" aria-live="polite"></div>
+        <p id="list-error" class="error" role="alert"></p>
+        <button id="new-rsvp">Add another RSVP</button>
+      </section>
+    </main>
+    <!-- <footer>Made with ♡</footer> -->
+  </body>
+</html>
