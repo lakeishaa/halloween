@@ -189,7 +189,7 @@ footer {
 
 /* Card spacing */
 .card {
-  padding: 28px 32px;
+  padding: 18px;
 }
 
 /* Heading spacing */
@@ -231,7 +231,7 @@ button {
 /* Mobile */
 @media (max-width: 600px) {
   .card {
-    padding: 24px 20px;
+    padding: 18px;
   }
 
   .invite-image {
