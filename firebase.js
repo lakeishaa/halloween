@@ -10,13 +10,21 @@ import {
 // from Firebase Console > Project settings > General > Your apps > Config.
 // Firebase web configuration is public; never add service-account private keys.
 const firebaseConfig = {
+  // apiKey: "",
   apiKey: "AIzaSyAWO4bllHzDPwM2kju6U27J4bdGiHI5NN4",
+  apiKey: "",
   authDomain: "halloween-43c89.firebaseapp.com",
+  // authDomain: "",
   projectId: "halloween-43c89",
+  // projectId: "",
   storageBucket: "halloween-43c89.firebasestorage.app",
+  // storageBucket: "",
   messagingSenderId: "423504644859",
+  // messagingSenderId: "",
   appId: "1:423504644859:web:c48f23680ad556074a3e5e",
+  // appId: "",
   measurementId: "G-4ZRELDHCK5",
+  // measurementId: "",
 };
 
 const app = initializeApp(firebaseConfig);
